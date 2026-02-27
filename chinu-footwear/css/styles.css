@@ -1,0 +1,242 @@
+:root {
+    --ColorFondoBody: #e6e0de;
+    --ColorTextoBody: #333;
+    --ColorHeader: #e3dedc;
+    --ColorLogo: #444;
+    --ColorNav: #000;
+    --ColorNavActivo: #ff8c00;
+    --ColorBannerTexto: #6f6a65;
+    --ColorProductoFondo: #f2eeec;
+    --ColorProductoTexto: #111;
+    --SombraLigera: rgba(0,0,0,0.12);
+    --SombraMedia: rgba(0,0,0,0.15);
+    --SombraFuerte: rgba(0,0,0,0.25);
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background-color: var(--ColorFondoBody);
+    color: var(--ColorTextoBody);
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: var(--ColorHeader);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    box-shadow: 0 4px 12px var(--SombraLigera);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--ColorLogo);
+}
+
+/* ===== NAV ===== */
+.nav {
+    display: flex;
+    gap: 180px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--ColorNav);
+    font-weight: 500;
+}
+
+.nav a.activo {
+    color: var(--ColorNavActivo);
+}
+
+/* ===== ICONOS ===== */
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons input {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    width: 100%;
+    height: 450px;
+    background-image: url("../img/banner.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== TEXTO DEL BANNER ===== */
+.banner-text {
+    text-align: center;
+    padding: 25px 45px;
+}
+
+.banner-text h1 {
+    font-size: 42px;
+    color: var(--ColorBannerTexto);
+}
+
+.banner-text p {
+    font-size: 16px;
+    color: var(--ColorBannerTexto);
+}
+
+/* ===== TITULOS ===== */
+.titulo-seccion {
+    text-align: center;
+    margin: 50px 0 35px;
+}
+
+/* ================== PRODUCTOS =================== */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 80px 60px;
+}
+
+.producto {
+    text-align: center;
+    background: var(--ColorProductoFondo);
+    padding: 22px 12px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px var(--SombraMedia);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px var(--SombraFuerte);
+}
+
+/* IMÁGENES PRODUCTOS */
+.producto img {
+    width: 240px;
+    height: 155px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 6px;
+}
+
+/* TEXTO PRODUCTOS */
+.producto p {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.producto strong {
+    font-size: 16px;
+    color: var(--ColorProductoTexto);
+}
+
+/* ================= COLECCIONES ================== */
+
+.colecciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px 80px 60px;
+}
+
+.coleccion {
+    text-align: center;
+    background: var(--ColorProductoFondo);
+    padding: 20px 10px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px var(--SombraMedia);
+    transition: transform 0.3s ease;
+}
+
+.coleccion:hover {
+    transform: translateY(-6px);
+}
+
+.coleccion img {
+    width: 150px;
+    height: 110px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 6px;
+}
+
+.coleccion p {
+    font-size: 15px;
+}
+
+/* ================= DISEÑO ADAPTABLE ================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav {
+        gap: 30px;
+    }
+
+    .banner {
+        height: 280px;
+    }
+
+    .banner-text h1 {
+        font-size: 28px;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .colecciones {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+
+    .producto img {
+        width: 200px;
+        height: auto;
+    }
+}
+/* ===== BOTÓN MOSTRAR / OCULTAR COLECCIONES ===== */
+.btn-toggle {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff8c00;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-toggle:hover {
+    opacity: 0.85;
+}
